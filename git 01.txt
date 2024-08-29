@@ -1,0 +1,11 @@
+
+Devops:
+
+Devops is not a new tool/technology in the market.
+
+It is a new culture or process to devlop, release and maintaince of software application/project/product with higher quality in very faster way.
+
+We can achive by using automation tools.
+
+For any software product, two groups of engineers will works
+
