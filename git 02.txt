@@ -1,0 +1,31 @@
+
+Devops Cycle is an infinite loop where everything is continuous.
+
+Version control system tools:
+`````````````````````````````
+Version control system also known as 
+    >> Software configuration management (SCM) or 
+    >> source code management (SCM).
+
+Need of version control system?
+How version control system will works?
+Benifits of version control system?
+
+Types of version control system?
+Centralized Version Control System (CVCS)
+Distributed Version Control System (DVCS)
+
+Difference between CVCS and DVCS?
+
+
+Devloper ---> Write code ---> files 
+
+Client ---> Durga
+Requirement ---> Plesase develop this project 
+
+Devloper ---> Write code ---> files 
+
+
+
+
+
