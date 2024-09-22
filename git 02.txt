@@ -50,3 +50,4 @@ will work in collaborative way.
 5) Parallel development must be required
 
 
+How Version Control System will work? Version control system always talks about files which contain source code. Everyone required version control system to maintain different versions of their document.  tester  To maintain different versions of test script Architect  To maintain different versions of Documents Project Manager  To maintain different versions of Excel sheets etc         
