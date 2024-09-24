@@ -239,4 +239,245 @@ Output explanation:
 git diff HEAD file1.txt
 ```
 
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff HEAD file1.txt
+diff --git a/file1.txt b/file1.txt
+index d0cd9d0..a27d8e1 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,4 +1,6 @@
+ This is First line in file1.txt
+ This is Second line in file1.txt
+ Third line in file1.txt
+-Fourth line in file1.txt
+\ No newline at end of file
++Fourth line in file1.txt
++Fifth line in file1.txt
++sixth line in file1.txt
+\ No newline at end of file
+```
+
+### Case-3: To see the difference in File Content between Staging Area and Last Commit
+
+- we can use --cached option or --staged option to see the difference in file content between staging area and last commit.
+
+```bash
+git diff --staged HEAD file1.txt
+```
+- Here HEAD is optional, we can use --cached or --staged
+  
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff --staged HEAD file1.txt
+diff --git a/file1.txt b/file1.txt
+index d0cd9d0..97c6207 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,4 +1,5 @@
+ This is First line in file1.txt
+ This is Second line in file1.txt
+ Third line in file1.txt
+-Fourth line in file1.txt
+\ No newline at end of file
++Fourth line in file1.txt
++Fifth line in file1.txt
+\ No newline at end of file
+(base)
+```
+
+### Case-4: To see the difference in File Content between specific Commit and Working Directory Copy
+- git diff 7chracters_of_specified_commitid filename
+
+```
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git log --oneline
+a76e21b (HEAD -> master)  files and each file contains 4 lines
+284e66c 2 files and each files contains two lines
+(base)
+```
+
+```bash
+git diff 284e66c file1.txt
+```
+
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff 284e66c file1.txt
+diff --git a/file1.txt b/file1.txt
+index ecf1388..a27d8e1 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,2 +1,6 @@
+ This is First line in file1.txt
+ This is Second line in file1.txt
++Third line in file1.txt
++Fourth line in file1.txt
++Fifth line in file1.txt
++sixth line in file1.txt
+\ No newline at end of file
+```
+
+
+### Case-5: To see the difference in file content between specific commit and staging area copy:
+
+```bash
+$ git log --oneline
+a76e21b (HEAD -> master)  files and each file contains 4 lines
+284e66c 2 files and each files contains two lines
+```
+
+
+```bash
+git diff 284e66c a76e21b file1.txt
+```
+
+Output
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff 284e66c a76e21b file1.txt
+diff --git a/file1.txt b/file1.txt
+index ecf1388..d0cd9d0 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,2 +1,4 @@
+ This is First line in file1.txt
+ This is Second line in file1.txt
++Third line in file1.txt
++Fourth line in file1.txt
+\ No newline at end of file
+```
+
+```bash
+git diff a76e21b 284e66c file1.txt
+```
+
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff a76e21b 284e66c file1.txt
+diff --git a/file1.txt b/file1.txt
+index d0cd9d0..ecf1388 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1,4 +1,2 @@
+ This is First line in file1.txt
+ This is Second line in file1.txt
+-Third line in file1.txt
+-Fourth line in file1.txt
+\ No newline at end of file
+```
+
+### Case-6: To see the difference in File Content between 2 specified Commits:
+
+```bash
+git diff 284e66c a76e21b file1.txt
+```
+
+```bash
+Akshay@LAPTOP-5MJVV5PN MINGW64 ~/Documents/ALLFolders/Git DurgaSoft/project4 (master)
+$ git diff 284e66c a76e21b file1.txt
+diff --git a/file1.txt b/file1.txt
+```
+
+### Case-7: To see the difference in File Content between Last Commit and Last but one Commit
+
+```bash
+git diff HEAD HEAD^ file1.txt
+git diff HEAD HEAD^1 file1.txt
+git diff HEAD HEAD~1 file1.txt
+```
+
+- HEAD  Reference to last commit
+- HEAD^ or HEAD^1 or HEAD~1  Reference to last but one commit
+
+### Case-8: To see the differences in all Files Content between 2 specified Commits
+
+```bash
+$git commit -m '5th line added to file1.txt'
+and removed 3rd and 4th line from file2.txt
+```
+
+```bash
+git diff 284e66c a76e21b
+```
+
+```bash
+$ git log --oneline
+be5256c (HEAD -> master) 6th line added to file1, 3rd and 4th lines removed from file2
+8ceda5e 5th line added to file1.txt
+6745461 2 files and each file contains 4 lines
+e5705a6 2 files and each file contains 2 lines
+$ git diff 6745461 be5256c
+diff --git a/file1.txt b/file1.txt
+index cadd0e1..e3e329f 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -2,3 +2,5 @@ First line in file1.txt
+Second line in file1.txt
+Third line in file1.txt
+Fourth line in file1.txt
++Fifth line in file1.txt
++sixth line in file1.txt
+diff --git a/file2.txt b/file2.txt
+index ad87203..3495851 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -1,4 +1,2 @@
+First line in file2.txt
+Second line in file2.txt
+-Third line in file2.txt
+-Fourth line in file2.txt
+```
+
+
+### Case-9: To see the differences in Content between 2 Branches
+
+```bash
+$ git diff master test
+```
+- It shows all differences between master branch and test branch
+
+### Case-10: To see the differences in Content between Local and Remote Repositories
+
+```bash
+$ git diff master origin/master
+```
+- It shows all differences between master branch in local repository and master branch in 
+remote repository.
+
+
+**_Summary_**:
+git diff <path>
+Shows the differences in the content of working directory, staging area, and local repository.
+We can use it in the following ways:
+
+1. `git diff file1.txt`
+   To compare working directory copy with staged copy.
+
+2. `git diff HEAD file1.txt`
+   To compare working directory copy with last commit copy.
+
+3. `git diff --staged file1.txt`, `git diff --cached file1.txt`, `git diff --staged HEAD file1.txt`, `git diff --cached HEAD file1.txt`
+   To compare staged copy with last commit copy.
+
+4. `git diff <commit_id> file1.txt`
+   To compare working directory copy with the specified commit copy.
+
+5. `git diff --staged <commit_id> file1.txt`
+   To compare staged copy with the specified commit copy.
+
+6. `git diff <source_commit_id> <destination_commit_id> file1.txt`
+   To compare content in the file between two commits.
+
+7. `git diff HEAD HEAD~1 file1.txt`
+   To compare content in the file between last commit and last but one commit.
+
+8. `git diff <source_commit_id> <destination_commit_id>`
+   To compare content of all files between two commits.
+
+9. `git diff master test`
+   It shows all differences between master branch and test branch.
+
+10. `git diff master origin/master`
+   It shows all differences between master branch in local repository and master branch in remote repository.
 
