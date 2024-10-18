@@ -1,5 +1,5 @@
 
-## Utility-2: Undo Commits at the Repository Level
+### Utility-2: Undo Commits at the Repository Level
 
 We can use `git reset` to undo commits at the repository level.
 
