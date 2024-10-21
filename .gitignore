@@ -1,0 +1,6 @@
+# Ignore a.txt file 
+
+a.txt
+server.log
+*.log
+

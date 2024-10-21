@@ -76,3 +76,108 @@ After creating the alias, we can use either the alias name or the original comma
 $ git one      # uses the alias
 $ git log --oneline  # uses the original command
 ```
+
+### Q2: Create alias name 's' for the following Git command:
+```bash
+git status
+```
+
+#### Test whether the alias name 's' is already used or not:
+```bash
+$ git s
+```
+Output:
+```
+git: 's' is not a git command. See 'git --help'.
+```
+Since 's' is not a Git command, we can use it as an alias.
+
+#### Creating the alias:
+```bash
+$ git config --global alias.s "status"
+```
+
+#### Using the alias:
+```bash
+$ git s
+```
+Output:
+```
+On branch master
+nothing to commit, working tree clean
+```
+
+#### What happens if we include 'git' in the alias command?
+If you use the `git` command in the alias itself:
+```bash
+$ git config --global alias.ss "git status"
+```
+Then trying to use it:
+```bash
+$ ss
+```
+Output:
+```
+bash: ss: command not found
+```
+The alias won't work outside Git, as it expects only the Git subcommand.
+
+#### Where are aliases stored?
+All alias names are stored in the `.gitconfig` file, located in the user's home directory. For Windows, it is available in:
+```plaintext
+C:\Users\lenovo\.gitconfig
+```
+
+Example `.gitconfig` file:
+```ini
+[user]
+  name = Ravi
+  email = durgasoftonlinetraining@gmail.com
+
+[core]
+  autocrlf = true
+
+[diff]
+  tool = p4merge
+
+[difftool "p4merge"]
+  path = C:\\Program Files\\Perforce\\p4merge.exe
+
+[difftool]
+  prompt = false
+
+[merge]
+  tool = p4merge
+
+[mergetool "p4merge"]
+  path = C:\\Program Files\\Perforce\\p4merge.exe
+
+[mergetool]
+  prompt = false
+
+[alias]
+  one = log --oneline
+  s = status
+```
+
+#### Modifying an alias:
+Aliases can be modified based on requirements. For example:
+```bash
+$ git config --global alias.one "log"
+```
+Now, using the alias:
+```bash
+$ git one
+```
+Output:
+```
+commit bb26af3c6875a480ee0f92883ba85af5048eec6f (HEAD -> master)
+Author: Ravi <durgasoftonlinetraining@gmail.com>
+Date: Tue May 26 19:40:13 2020 +0530
+ two files we added
+
+commit 257073dcecf4364b77e8c64dbd7386a71f4071a2
+Author: Ravi <durgasoftonlinetraining@gmail.com>
+Date: Tue May 26 12:38:38 2020 +0530
+ file1 added
+```
