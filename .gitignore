@@ -4,3 +4,5 @@ a.txt
 server.log
 *.log
 
+log/
+
