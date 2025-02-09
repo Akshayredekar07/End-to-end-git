@@ -166,14 +166,14 @@ git log --help
 **_Summary_**:
 
 ```bash
-- `git log` : To get detail log information of all commits.
-- `git log --oneline` : To get short log information of all commits.
-- `git log filename.txt` : To get log information of particular file.
-- `git log -n 2` : To limit the number of commits.
-- `git log -3` : To limit the number of commits.
-- `git log --grep="pattern"` : To search based on given pattern in the commit message.
-- `git log --since="date"` : To show commits more recent than a specific date.
-- `git log --until="date"` : To show commits older than a specific date.
-- `git log --author="pattern"` : To show commits based on Author.
-- `git log --decorate --oneline` : To display extra Information.
+- `git log` #: To get detail log information of all commits.
+- `git log --oneline` #: To get short log information of all commits.
+- `git log filename.txt` #: To get log information of particular file.
+- `git log -n 2` #: To limit the number of commits.
+- `git log -3` #: To limit the number of commits.
+- `git log --grep="pattern"` #: To search based on given pattern in the commit message.
+- `git log --since="date"` #: To show commits more recent than a specific date.
+- `git log --until="date"` #: To show commits older than a specific date.
+- `git log --author="pattern"` #: To show commits based on Author.
+- `git log --decorate --oneline` #: To display extra Information.
 ```
